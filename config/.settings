@@ -1,0 +1,17 @@
+{
+    "projectName": "bensonovo",
+    "username": "benson@ovoenergy.com",
+    "id": "76102420-c559-11e7-ae01-119d4b8c4b76",
+    "namespace": "",
+    "orgType": "developer",
+    "loginUrl": "https://login.salesforce.com/",
+    "instanceUrl": "https://eu9.salesforce.com",
+    "workspace": "/Users/bnsndaniel/Documents",
+    "subscription": [
+        "ApexClass",
+        "ApexComponent",
+        "ApexPage",
+        "ApexTrigger",
+        "StaticResource"
+    ]
+}
