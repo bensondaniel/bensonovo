@@ -1,0 +1,26 @@
+<apex:page controller="FriendlyContactsController" showHeader="true" sidebar="true">
+	
+   <apex:form > 
+
+   <!-- Table needs to be paginated-->
+	   <apex:pageBlock title="Our Friendly Contacts" mode="inlineEdit">
+	      <apex:pageBlockButtons > 
+			 <apex:commandButton action="{!saveme}" id="saveButton" value="Save"/> 
+	         <apex:commandButton id="cancelButton" value="Cancel"/> 
+	      </apex:pageBlockButtons> 
+	      <apex:pageBlockTable value="{!contacts}" var="contact">
+	         <apex:column value="{!contact.OVOCustomerID__c}"/>
+	         <apex:column value="{!contact.FirstName}"/>
+	         <apex:column value="{!contact.LastName}"/>
+	         <apex:column value="{!contact.Gender__c}"/>
+	         <apex:column headerValue="Contact Loyalty Status">
+	         	 <apex:actionRegion>
+	         	 	<apex:outputField value="{!contact.ContactLoyaltyStatus__c}" >
+	         	 		<apex:inlineEditSupport event="ondblClick" showOnEdit="saveButton,cancelButton" />
+	         	 	</apex:outputField>
+	         	 </apex:actionRegion>
+	         </apex:column>
+	      </apex:pageBlockTable>
+	   </apex:pageBlock>
+   </apex:form>
+</apex:page> 

@@ -6,7 +6,7 @@
         "createdById": "0050O000005aW0eQAE",
         "namespacePrefix": null,
         "lastModifiedById": "0050O000005aW0eQAE",
-        "lastModifiedDate": "2017-11-09T15:27:17.000+0000",
+        "lastModifiedDate": "2017-11-09T18:23:53.000+0000",
         "fullName": "ContactController",
         "fileName": "unpackaged/classes/ContactController.cls",
         "createdByName": "Benson Daniel",
@@ -335,6 +335,38 @@
         "lastModifiedDate": "2017-11-09T16:30:21.000Z",
         "manageableState": "unmanaged",
         "type": "AuraDefinitionBundle",
+        "mmState": "clean"
+    },
+    "FriendlyContactsPage.page": {
+        "id": "0660O000001zVCMQA2",
+        "name": "FriendlyContactsPage",
+        "createdDate": "2017-11-13T10:52:22.000+0000",
+        "createdById": "0050O000005aW0eQAE",
+        "namespacePrefix": null,
+        "lastModifiedById": "0050O000005aW0eQAE",
+        "lastModifiedDate": "2017-11-13T12:03:45.000+0000",
+        "fullName": "FriendlyContactsPage",
+        "fileName": "unpackaged/pages/FriendlyContactsPage.page",
+        "createdByName": "Benson Daniel",
+        "lastModifiedByName": "Benson Daniel",
+        "manageableState": "unmanaged",
+        "type": "ApexPage",
+        "mmState": "clean"
+    },
+    "FriendlyContactsController.cls": {
+        "id": "01p0O000007j3TgQAI",
+        "name": "FriendlyContactsController",
+        "createdDate": "2017-11-13T10:52:47.000+0000",
+        "createdById": "0050O000005aW0eQAE",
+        "namespacePrefix": null,
+        "lastModifiedById": "0050O000005aW0eQAE",
+        "lastModifiedDate": "2017-11-13T12:02:05.000+0000",
+        "fullName": "FriendlyContactsController",
+        "fileName": "unpackaged/classes/FriendlyContactsController.cls",
+        "createdByName": "Benson Daniel",
+        "lastModifiedByName": "Benson Daniel",
+        "manageableState": "unmanaged",
+        "type": "ApexClass",
         "mmState": "clean"
     }
 }

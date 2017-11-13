@@ -4,5 +4,13 @@
 		<members>FriendlyCustomers</members>
 		<name>AuraDefinitionBundle</name>
 	</types>
+	<types>
+		<members>FriendlyContactsPage</members>
+		<name>ApexPage</name>
+	</types>
+	<types>
+		<members>FriendlyContactsController</members>
+		<name>ApexClass</name>
+	</types>
 	<version>36.0</version>
 </Package>
