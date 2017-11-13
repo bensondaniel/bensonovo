@@ -3,6 +3,8 @@ public with sharing class FriendlyContactsController {
 	public List<Contact> contacts {get;set;}
 
 	public FriendlyContactsController() {
+		OVORestController ovo = new OVORestController();
+        ovo.fetchOVOPayload();
 		contacts = [SELECT Id, Salutation, OVOCustomerID__c, FirstName, LastName, Gender__c, ContactLoyaltyStatus__c FROM Contact];
 	} 
 
@@ -14,12 +16,5 @@ public with sharing class FriendlyContactsController {
     	}
     return NULL;
 	}
-
-	@RemoteAction
-    public static Object fetchOVOResponse() {
-    	OVORestController ovo = new OVORestController();
-        Object ovoResponse = ovo.fetchOVOPayload();
-        return ovoResponse; 
-    }
 
 }

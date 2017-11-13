@@ -1,14 +1,5 @@
 <apex:page controller="FriendlyContactsController" showHeader="true" sidebar="true">
 
-
-   <script type="text/javascript">
-       console.log('Hello');
-       FriendlyContactsController.fetchOVOResponse(function(results, event) {
-           console.log(results);
-       });
-   </script>
-
-
    <apex:form > 
 
    <!-- Table needs to be paginated-->

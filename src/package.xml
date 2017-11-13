@@ -12,6 +12,10 @@
 		<members>FriendlyContactsController</members>
 		<members>OVORestController</members>
 		<members>OVOFriendsCustomType</members>
+		<members>FriendlyContactsController_Test</members>
+		<members>OVORestController_Test</members>
+		<members>TestDataFactory</members>
+		<members>OVOHttpCalloutMockImpl</members>
 		<name>ApexClass</name>
 	</types>
 	<version>36.0</version>

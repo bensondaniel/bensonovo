@@ -1,31 +1,30 @@
 public with sharing class OVORestController {
 
-	public Object fetchOVOPayload() {
+	public void fetchOVOPayload() {
 
-		String friendsJson;
+		Set<String> allReceivedOVOIDs = new Set<String>();
 
 		HttpRequest req = new HttpRequest();
 	   	Http http = new Http();
+	   	
 	   	// set the method
 	   	req.setMethod('GET');
-	   	// generate the url for the request
+
+	   	// URL is hard coded but wise to use Custom Setting
 	   	String url = 'https://sheltered-depths-66346.herokuapp.com/customers';
+	   	
 	   	// add the endpoint to the request
 	   	req.setEndpoint(url);
+	   	
 	   	// create the response object
 	   	HTTPResponse resp = http.send(req);
-
-	   	
-
-	   	friendsJson = resp.getBody();
 
 	   	//Cast the response to a Custom Type for Easy and Meaningful Parsing
 	   	Map<String, Object> cObjMap = (Map<String, Object>) JSON.deserializeUntyped(resp.getBody());
 
 	   	List<Object> cObjList = (List<Object>)cObjMap.get('customers');
-	   	Set<String> allReceivedOVOIDs = new Set<String>();
+	   	
 
-	   	List<Contact> contactstoInsert = new List<Contact>();
 	   	Map<String, Contact> newCollection = new Map<String, Contact>();
 	   	for(Object currentRecord : cObjList){
 	   		Map<String,Object> currentFriend = new Map<String,Object>();
@@ -40,11 +39,15 @@ public with sharing class OVORestController {
 			newCollection.put(newContact.OVOCustomerID__c,newContact);
             allReceivedOVOIDs.add(newContact.OVOCustomerID__c );
 	   	}
+	   	comparePayloadWithExistingContacts( allReceivedOVOIDs, newCollection);
 
+	}
 
-        //Create a Map of Existing Contacts in the format OVOID vs Contact
+	public void comparePayloadWithExistingContacts (Set<String> allReceivedOVOIDs, Map<String, Contact> newCollection  ){
+		//Create a Map of Existing Contacts in the format OVOID vs Contact
         //This is done for easy comparison between newly received Friend List and those that have
         //Already been saved in Salesforce
+        List<Contact> contactstoInsert = new List<Contact>();
 	   	List<Contact> existingContactsList = [Select Id, OVOCustomerID__c from Contact where OVOCustomerID__c IN :allReceivedOVOIDs];
 	   	Map<String, Contact> existingCollection = new Map<String, Contact>();
 	   	system.debug('!!!!!!!!!!!!!! Here is the Start !!!!!!!!!!!!!');
@@ -66,9 +69,6 @@ public with sharing class OVORestController {
 	   	}
 	   	
 	   	insert contactstoInsert;
-
-	   	return newCollection;
-
 	}
 
 }
