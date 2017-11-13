@@ -10,6 +10,8 @@
 	</types>
 	<types>
 		<members>FriendlyContactsController</members>
+		<members>OVORestController</members>
+		<members>OVOFriendsCustomType</members>
 		<name>ApexClass</name>
 	</types>
 	<version>36.0</version>

@@ -1,5 +1,14 @@
 <apex:page controller="FriendlyContactsController" showHeader="true" sidebar="true">
-	
+
+
+   <script type="text/javascript">
+       console.log('Hello');
+       FriendlyContactsController.fetchOVOResponse(function(results, event) {
+           console.log(results);
+       });
+   </script>
+
+
    <apex:form > 
 
    <!-- Table needs to be paginated-->
@@ -10,6 +19,7 @@
 	      </apex:pageBlockButtons> 
 	      <apex:pageBlockTable value="{!contacts}" var="contact">
 	         <apex:column value="{!contact.OVOCustomerID__c}"/>
+	         <apex:column value="{!contact.Salutation}"/>
 	         <apex:column value="{!contact.FirstName}"/>
 	         <apex:column value="{!contact.LastName}"/>
 	         <apex:column value="{!contact.Gender__c}"/>
